@@ -1,0 +1,14 @@
+#server:
+#  port: 8761
+#eureka:
+#  instance:
+#    hostname: "${HOSTNAME}.eureka"
+#  client:
+#    fetch-registry: false
+#    registry-with-eureka: false
+#    serviceUrl:
+#      defaultZone:${EUREKA-SERVER-ADDRESS}
+#
+#spring:
+#  application:
+#    name: EUREKA-SERVER
