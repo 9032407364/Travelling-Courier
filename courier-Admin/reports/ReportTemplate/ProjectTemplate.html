@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            background-color: #fff;
+        }
+
+        /* @media (max-width: 583px) hr {
+            background-color: rgb(249, 195, 0);
+        } */
+
+           @media print {
+            .hr {
+                background-color: rgb(249, 195, 0);
+            }
+
+            @page :first {
+			  margin-top: 10px;
+			}
+	    
+        .rgdl2 {
+                color: #0451fd;
+                padding-top: 8%;
+                font-size: 13px !important;
+                font-weight: 600;
+            }
+
+        .col-md-3 {
+                /* -ms-flex: 0 0 25%; */
+                /* flex: 0 0 25%; */
+                max-width: 25%;
+                display: flex;
+            }
+
+            .col-md-1 {
+                /* -ms-flex: 0 0 25%; */
+                /* flex: 0 0 25%; */
+                max-width: 15%;
+                display: flex;
+            }
+
+            .clock {
+                border-color: #5f5a59;
+                border: groove;
+                margin-left: -7%;
+                margin-top: -1%;
+                margin-bottom: -1%;
+                height: 77%;
+                width: 40%;
+            }
+
+        span {
+            display: inline-block;
+            /* margin-bottom: .5rem; */
+            touch-action: manipulation;
+            font-size: 15px;
+            /* margin-top: 13px; */
+            margin-left: -2%;
+        }
+
+	.breakDiv{
+            display:block !important;
+        }
+
+	.faultTableSection {page-break-inside: avoid;}
+
+	.TableSection {page-break-inside: avoid;}
+
+	.Tableclock {
+        height: 48%;
+    	}
+
+        .persontable th:nth-child(4) {
+            width: 0px;
+        }
+
+	    .persontable td:nth-child(1) {
+                    width: 10%;
+                }
+                .persontable td:nth-child(2) {
+                    width: 15%;
+                }
+                .persontable td:nth-child(3) {
+                    width: 10%;
+                }
+                .persontable td:nth-child(4) {
+                    width: 10%;
+                }
+                .persontable td:nth-child(5) {
+                    width: 55%;
+                }
+            
+        }
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        .hr {
+            text-align: center;
+            background-color: #2e8c4b;
+            width: 35px;
+            /* max-width: 1127px; */
+        }
+
+        .lbl {
+            color: rgb(249, 195, 0);
+            font-weight: bold;
+            font-size: 30px;
+            padding-top: 5px;
+        }
+
+        .rgd {
+            /* margin-left: 10px; */
+            margin-top: 30px;
+            border-color: #5f5a59;
+            border: groove;
+            background-color: white;
+        }
+
+        .rgdl {
+            padding-top: 6px;
+            display: inline-block
+        }
+
+        .time {
+            margin-top: 1.4%;
+            background-color: rgb(249, 195, 0);
+            margin-left: 13.7%;
+        }
+
+        .time1 {
+            margin-top: 1.4%;
+            /* margin-left: 48px; */
+            background-color: rgb(249, 195, 0);
+        }
+
+        .clock {
+            border-color: #5f5a59;
+            border: groove;
+            margin-left: -7%;
+            margin-top: -1%;
+            margin-bottom: -1%;
+        }
+
+        .tdValue{
+            max-width: 15px;
+            overflow-wrap: break-word;
+        }
+
+        .firstTdcolor {
+            max-width: 15px;
+            overflow-wrap: break-word;
+            height: 4.3%;
+            background-color: #fdc19e;
+        }
+
+        .firstTdcolor1 {
+            max-width: 15px;
+            overflow-wrap: break-word;
+            height: 4.3%;
+        }
+
+	.Tableclock {
+            border-color: #5f5a59;
+            border: groove;
+            margin-left: -7%;
+            margin-top: -1%;
+            margin-bottom: -1%;
+        }
+
+        .rgdl2 {
+            color: #0451fd;
+            padding-top: 8%;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .batch {
+            background-color: rgb(249, 195, 0);
+            /* margin-left: 80px; */
+            margin-top: 2%;
+            text-align: center;
+        }
+
+        .batchDetails {
+            padding-top: 7px;
+            color: white
+        }
+
+        .clock1 {
+            margin-left: 1.4%;
+            background-color: white;
+            margin-top: 1.3%;
+            border-color: #5f5a59;
+            border: groove;
+        }
+
+        .rgdl1 {
+            margin-left: 9%;
+        }
+
+        .batchD {
+            padding-top: 1%;
+            font-weight: 600;
+            color: white;
+        }
+
+        .dot {
+            height: 40px;
+            width: 40px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0.5%;
+            text-align: center;
+            padding-top: 6px;
+        }
+
+        .persontable {
+            margin-top: 1.4%;
+            font-family: Arial;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .persontable td,
+        .persontable th {
+            border: 1px solid #545252;
+            padding: 0.8%;
+            text-align: center;
+            font-size: 17px;
+            background-color: #a9a9a96b;
+        }
+
+        .persontable th {
+            padding-top: 1.2%;
+            padding-bottom: 1.2%;
+            text-align: center;
+            background-color: #686968;
+            color: white;
+        }
+
+        .table-bordered {
+            font-family: Arial;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table-bordered td,
+        .table-bordered th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            width: 100px;
+        }
+
+        .table-bordered th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #686968;
+            color: white;
+        }
+
+	.breakDiv{
+            display: none;
+        }
+
+        th {
+
+            background: #f8f8f8;
+            font-weight: bold;
+            padding: 2px;
+        }
+
+        .fault {
+            background-color: #bb0606;
+            margin-top: 50px;
+            margin-left: 80px;
+            text-align: center;
+        }
+
+        .new {
+            background-color: #ffa570;
+            text-align: center;
+            padding-top: 10px;
+            font-family: Arial;
+            font-weight: 600;
+        }
+
+        .value {
+            background-color: white;
+            border-color: #5f5a59;
+            border: groove;
+            margin-left: 10px;
+            padding-top: 8px;
+        }
+
+        .firstTd {
+            width: 20%;
+            height: 4.3%;
+            background-color: #fdc19e;
+        }
+
+        .dateFault {
+            width: 30%;
+            height: 43px;
+        }
+
+        .persontable1 td {
+            border: 1px solid #545252;
+            padding: 0.8%;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        /* bootstarap classes css */
+
+        .container {
+            max-width: 88.333333%;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -1%;
+            margin-left: -1%;
+        }
+
+        .col-md-12 {
+            /* -ms-flex: 0 0 100%; */
+            flex: 0 0 100%;
+            max-width: 100%;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: .5rem;
+            touch-action: manipulation;
+        }
+
+        .col-md-4 {
+            /* -ms-flex: 0 0 33.333333%; */
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .col-md-2 {
+            /* -ms-flex: 0  0 16.666667%; */
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+        }
+
+
+        .col-md,
+        .col-md-1,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9,
+        .col-md-auto {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 1%;
+            padding-left: 1.3%;
+        }
+
+        .col-md-3 {
+            /* -ms-flex: 0 0 25%; */
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .graph1 {
+            margin-left: -2.7%;
+            width: 104%;
+            margin-top: 1.5%;
+        }
+
+        .activity {
+            background-color: #f7d7c5;
+            margin-top: 2%;
+            width: 70%;
+            margin-left: 15%;
+            border: outset;
+        }
+
+        .activitylabel {
+            margin-top: 1%;
+            margin-left: 1%;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container" id="reports">
+    <div class="row">
+        <div class="col-md-12 hr"><label id="headName" class="lbl"> Billing Report </label></div>
+    </div>
+    <div class="row" style="margin-top: -2%;">
+        <div class="col-md-4 rgd">
+            <label class="rgdl" style="margin-left: 1%; margin-right: -14px;" id="reportGenaration1stDiv">Date: 03-01-20 at 09.00</label>
+        </div>
+       
+    </div>
+
+    <div class="row">
+        <div class="col-md-6" style="width: 50%;" id="printNames1">
+
+        </div>
+        <div class="col-md-6" style="width: 50%;" id="printNames2">
+
+        </div>
+    </div>
+
+    <div class="row" id="catagory">
+    </div>
+    <div style="margin-left: -1.1%; margin-right: -0.7%;" id="batchDiv">
+       
+    </div>
+
+    <div class="row" id="tableheadDiv">
+    </div>
+	
+	<div class="row">
+        <div class="col-md-12 hr"><label id="headName0" class="lbl"> Traveller Details </label></div>
+    </div>
+
+    <div class="row" id="projectDiv">
+        <table id="projectTable" class="persontable" cellspacing="0" width="99%">
+            <thead>
+            <tr>
+
+                <th style="width: 10%;">Name</th>
+                <th style="width: 20%;">Email</th>
+                <th>Phone No</th>
+                <th>Departure City</th>
+                <th><span>Arriaval City</span></th>
+                <th><span>Departure Time</span></th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-md-12 hr"><label id="headName1" class="lbl"> Customer Details </label></div>
+    </div>
+
+    <div class="row" id="tablediv">
+        <table id="personDataTableNew" class="persontable" cellspacing="0" width="99%">
+            <thead>
+            <tr>
+
+                <th style="width: 10%;">Name</th>
+                <th style="width: 20%;">Email</th>
+				<th><span>Mobile No</span></th>
+                <th><span>Departure City</span></th>
+                <th><span>Arrival City</span></th>
+                <th><span>Departure Time</span></th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    </div>
+
+
+    <div class="breakDiv" id="breaktag">
+    </div>
+    <div id="faultBarHeading">
+
+    </div>
+
+
+    <div id="faulttable1">
+
+    </div>
+
+
+
+
+
+    <div class="TableSection" id="minMaxSection">
+        <div id="minMaxHead">
+
+        </div>
+
+
+
+        <div class="row" id="minMaxDiv">
+
+        </div>
+    </div>
+
+    <div id="faultGraph">
+
+    </div>
+
+    <div id="divid" class="graph">
+
+    </div>
+</div>
+
+
+</body>
+
+</html>

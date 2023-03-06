@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+            background-color: #fff;
+        }
+
+        /* @media (max-width: 583px) hr {
+            background-color: rgb(249, 195, 0);
+        } */
+
+           @media print {
+            .hr {
+                background-color: rgb(249, 195, 0);
+            }
+
+            @page :first {
+			  margin-top: 10px;
+			}
+	    
+        .rgdl2 {
+                color: #0451fd;
+                padding-top: 8%;
+                font-size: 13px !important;
+                font-weight: 600;
+            }
+
+        .col-md-3 {
+                /* -ms-flex: 0 0 25%; */
+                /* flex: 0 0 25%; */
+                max-width: 25%;
+                display: flex;
+            }
+
+            .col-md-1 {
+                /* -ms-flex: 0 0 25%; */
+                /* flex: 0 0 25%; */
+                max-width: 15%;
+                display: flex;
+            }
+
+            .clock {
+                border-color: #5f5a59;
+                border: groove;
+                margin-left: -7%;
+                margin-top: -1%;
+                margin-bottom: -1%;
+                height: 77%;
+                width: 40%;
+            }
+
+        span {
+            display: inline-block;
+            /* margin-bottom: .5rem; */
+            touch-action: manipulation;
+            font-size: 15px;
+            /* margin-top: 13px; */
+            margin-left: -2%;
+        }
+
+	.breakDiv{
+            display:block !important;
+        }
+
+	.faultTableSection {page-break-inside: avoid;}
+
+	.TableSection {page-break-inside: avoid;}
+
+	.Tableclock {
+        height: 48%;
+    	}
+
+        .persontable th:nth-child(4) {
+            width: 0px;
+        }
+
+	    .persontable td:nth-child(1) {
+                    width: 10%;
+                }
+                .persontable td:nth-child(2) {
+                    width: 15%;
+                }
+                .persontable td:nth-child(3) {
+                    width: 10%;
+                }
+                .persontable td:nth-child(4) {
+                    width: 10%;
+                }
+                .persontable td:nth-child(5) {
+                    width: 55%;
+                }
+            
+        }
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+        .hr {
+            text-align: center;
+            background-color: #2e8c4b;
+            width: 35px;
+            /* max-width: 1127px; */
+        }
+
+        .lbl {
+            color: rgb(249, 195, 0);
+            font-weight: bold;
+            font-size: 30px;
+            padding-top: 5px;
+        }
+
+        .rgd {
+            /* margin-left: 10px; */
+            margin-top: 30px;
+            border-color: #5f5a59;
+            border: groove;
+            background-color: white;
+        }
+
+        .rgdl {
+            padding-top: 6px;
+            display: inline-block
+        }
+
+        .time {
+            margin-top: 1.4%;
+            background-color: rgb(249, 195, 0);
+            margin-left: 13.7%;
+        }
+
+        .time1 {
+            margin-top: 1.4%;
+            /* margin-left: 48px; */
+            background-color: rgb(249, 195, 0);
+        }
+
+        .clock {
+            border-color: #5f5a59;
+            border: groove;
+            margin-left: -7%;
+            margin-top: -1%;
+            margin-bottom: -1%;
+        }
+
+        .tdValue{
+            max-width: 15px;
+            overflow-wrap: break-word;
+        }
+
+        .firstTdcolor {
+            max-width: 15px;
+            overflow-wrap: break-word;
+            height: 4.3%;
+            background-color: #fdc19e;
+        }
+
+        .firstTdcolor1 {
+            max-width: 15px;
+            overflow-wrap: break-word;
+            height: 4.3%;
+        }
+
+	.Tableclock {
+            border-color: #5f5a59;
+            border: groove;
+            margin-left: -7%;
+            margin-top: -1%;
+            margin-bottom: -1%;
+        }
+
+        .rgdl2 {
+            color: #0451fd;
+            padding-top: 8%;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .batch {
+            background-color: rgb(249, 195, 0);
+            /* margin-left: 80px; */
+            margin-top: 2%;
+            text-align: center;
+        }
+
+        .batchDetails {
+            padding-top: 7px;
+            color: white
+        }
+
+        .clock1 {
+            margin-left: 1.4%;
+            background-color: white;
+            margin-top: 1.3%;
+            border-color: #5f5a59;
+            border: groove;
+        }
+
+        .rgdl1 {
+            margin-left: 9%;
+        }
+
+        .batchD {
+            padding-top: 1%;
+            font-weight: 600;
+            color: white;
+        }
+
+        .dot {
+            height: 40px;
+            width: 40px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0.5%;
+            text-align: center;
+            padding-top: 6px;
+        }
+
+        .persontable {
+            margin-top: 1.4%;
+            font-family: Arial;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .persontable td,
+        .persontable th {
+            border: 1px solid #545252;
+            padding: 0.8%;
+            text-align: center;
+            font-size: 17px;
+            background-color: #a9a9a96b;
+        }
+
+        .persontable th {
+            padding-top: 1.2%;
+            padding-bottom: 1.2%;
+            text-align: center;
+            background-color: #686968;
+            color: white;
+        }
+
+        .table-bordered {
+            font-family: Arial;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table-bordered td,
+        .table-bordered th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            width: 100px;
+        }
+
+        .table-bordered th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #686968;
+            color: white;
+        }
+
+	.breakDiv{
+            display: none;
+        }
+
+        th {
+
+            background: #f8f8f8;
+            font-weight: bold;
+            padding: 2px;
+        }
+
+        .fault {
+            background-color: #bb0606;
+            margin-top: 50px;
+            margin-left: 80px;
+            text-align: center;
+        }
+
+        .new {
+            background-color: #ffa570;
+            text-align: center;
+            padding-top: 10px;
+            font-family: Arial;
+            font-weight: 600;
+        }
+
+        .value {
+            background-color: white;
+            border-color: #5f5a59;
+            border: groove;
+            margin-left: 10px;
+            padding-top: 8px;
+        }
+
+        .firstTd {
+            width: 20%;
+            height: 4.3%;
+            background-color: #fdc19e;
+        }
+
+        .dateFault {
+            width: 30%;
+            height: 43px;
+        }
+
+        .persontable1 td {
+            border: 1px solid #545252;
+            padding: 0.8%;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        /* bootstarap classes css */
+
+        .container {
+            max-width: 88.333333%;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -1%;
+            margin-left: -1%;
+        }
+
+        .col-md-12 {
+            /* -ms-flex: 0 0 100%; */
+            flex: 0 0 100%;
+            max-width: 100%;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: .5rem;
+            touch-action: manipulation;
+        }
+
+        .col-md-4 {
+            /* -ms-flex: 0 0 33.333333%; */
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .col-md-2 {
+            /* -ms-flex: 0  0 16.666667%; */
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%;
+        }
+
+
+        .col-md,
+        .col-md-1,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9,
+        .col-md-auto {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 1%;
+            padding-left: 1.3%;
+        }
+
+        .col-md-3 {
+            /* -ms-flex: 0 0 25%; */
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        .graph1 {
+            margin-left: -2.7%;
+            width: 104%;
+            margin-top: 1.5%;
+        }
+
+        .activity {
+            background-color: #f7d7c5;
+            margin-top: 2%;
+            width: 70%;
+            margin-left: 15%;
+            border: outset;
+        }
+
+        .activitylabel {
+            margin-top: 1%;
+            margin-left: 1%;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container" id="reports">
+    <div class="row">
+        <div class="col-md-12 hr"><label id="headName" class="lbl"> </label></div>
+    </div>
+    <div class="row" style="margin-top: -2%;">
+        <div class="col-md-4 rgd">
+            <label class="rgdl" style="margin-left: 1%; margin-right: -14px;" id="plantname"> </label>
+        </div>
+        <div class="col-md-4 rgd" style="margin-left: 33.3%;">
+            <label class="rgdl" style="margin-left: 1%; margin-right: -14px;" id="plantlocation"> </label>
+        </div>
+    </div>
+    <div class="row" style="margin-top: -2%;">
+        <div class="col-md-4 col-sm-12 rgd">
+            <label class="rgdl" style="margin-left: 1%; margin-right: -14px;" id="reportGenaration1stDiv">Report Genaration Date: 03-01-20 at 09.00</label>
+        </div>
+        <!-- <div class="col-md-6">
+
+        </div> -->
+    </div>
+    <div class="row">
+        <div class="col-md-2 time1">
+            <label class="rgdl2">Begin Time</label>
+        </div>
+        <div class="col-md-3 clock1" style="background-color: white">
+            <img class="clock"
+                 src="data:image/jpeg;base64,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">
+            <label class="rgdl1"><span id="beginTime">02-Jan-2020 - 9.00am</span></label>
+        </div>
+        <div class="col-md-2 time">
+            <label class="rgdl2">End Time</label>
+        </div>
+        <div class="col-md-3 clock1" style="background-color: white">
+            <img class="clock"
+                 src="data:image/jpeg;base64,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">
+            <label class="rgdl1"><span id="endTime">02-Jan-2020 - 9.00am</span></label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6" style="width: 50%;" id="printNames1">
+
+        </div>
+        <div class="col-md-6" style="width: 50%;" id="printNames2">
+
+        </div>
+    </div>
+
+    <div class="row" id="catagory">
+    </div>
+    <div style="margin-left: -1.1%; margin-right: -0.7%;" id="batchDiv">
+        <!-- <div class="col-md-10 batch" style="max-width: 100.333333%; flex: auto;">
+            <label id="batchDetails" class="batchD" for="batchDetails">Batch Details</label>
+        </div> -->
+    </div>
+
+    <div class="row" id="tableheadDiv">
+    </div>
+    <div class="row" id="tablediv">
+        <table id="personDataTableNew" class="persontable" cellspacing="0" width="99%">
+            <thead>
+            <tr>
+
+                <th style="width: 110px;">Order No.</th>
+                <th style="width: 200px;">Material Description</th>
+                <th style="width: 160px;"><span>Start Time</span></th>
+                <th style="width: 160px;"><span>End Time</span></th>
+                <th>Print Unit Colors</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="breakDiv" id="breaktag">
+    </div>
+    <div id="faultBarHeading">
+
+    </div>
+
+
+    <div id="faulttable1">
+
+    </div>
+
+
+
+
+
+    <div class="TableSection" id="minMaxSection">
+        <div id="minMaxHead">
+
+        </div>
+
+
+
+        <div class="row" id="minMaxDiv">
+
+        </div>
+    </div>
+
+    <div id="faultGraph">
+
+    </div>
+
+    <div id="divid" class="graph">
+
+    </div>
+</div>
+
+
+</body>
+
+</html>
